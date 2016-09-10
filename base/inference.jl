@@ -1297,7 +1297,7 @@ function ⊑(a::ANY, b::ANY)
     end
 end
 
-widenconst(c::Const) = typeof(c.val)
+widenconst(c::Const) = type_typeof(c.val)
 widenconst(t::ANY) = t
 
 issubstate(a::VarState, b::VarState) = (a.typ ⊑ b.typ && a.undef <= b.undef)
